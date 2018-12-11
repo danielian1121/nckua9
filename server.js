@@ -7,15 +7,17 @@ const server = express()
 server.listen(3000)
 
 server.get('/api', (req, res) => {
+  const getTime = req.query.index.split(',')
   fs.readFile('./config/107-2.json')
     .then((data) => {
       data = JSON.parse(data)
-      let temp = []
-      let i = req.query.index
+      let result = []
       data.map((value, index) => {
-        if(value.time == i)
-         temp.push(value)
+        for (let i = 0; i < getTime.length; i++) {
+          if(value.time == getTime[i])
+           result.push(value)
+        }
       })
-      res.send(temp)
+      res.send(result)
     })
 })

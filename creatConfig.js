@@ -16,7 +16,10 @@ $('tr', '#lesson').each(function () {
         break
       case 13:
         let temp = $(this).text().replace(/(^\s*)|(\s*$)/g,"")
-        json['teacher'] = temp.split('* ')
+        if (temp.includes('*')) {
+          temp = temp.substring($(this).text().indexOf('*')-3, $(this).text().indexOf('*'))
+        }
+        json['teacher'] = temp
         break
       case 16:
         json['time'] = $(this).text()
@@ -25,7 +28,7 @@ $('tr', '#lesson').each(function () {
       default:
     }
   })
-  if (!(json['teacher'] == '教師姓名*:主負責老師'))
+  if (!(json['teacher'] == '師姓名'))
     array.push(json)
 })
 /* array.push(total)

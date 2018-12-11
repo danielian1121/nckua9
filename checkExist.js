@@ -13,7 +13,7 @@ for (let i = 0 ; i < sLength ; i++) {
   for (let j = 0 ; j < tLength ; j++) {
     if (source[i].teacher.match( target[j].teacher )) {
       let data = {
-        [j]: target[j].persent
+        [target[j].class]: target[j].persent
       }
       source[i]['10501'].push(data)
     }

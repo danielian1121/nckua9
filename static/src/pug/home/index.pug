@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta( charset = 'utf8' )
+    meta( name = 'viewport', content = 'width=device-width, initial-scale=1.0' )
+    title Ncku A9
+
+    include /common/css.pug
+    +css( 'home/index' )
+
+  body
+    main.content
+      include /common/content.pug
+      +content()
+    include /common/js.pug
+    +js( 'home/index' )

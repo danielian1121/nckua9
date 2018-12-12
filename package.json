@@ -5,18 +5,40 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "d": "nodemon server.js"
+    "develop": "npm-run-all --parallel nodemon watch",
+    "nodemon": "nodemon ./server.js",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:html": "webpack --watch --config dev/html/webpack.config.js",
+    "watch:css": "webpack --watch --config dev/css/webpack.config.js",
+    "watch:js": "webpack --watch --config dev/js/webpack.config.js",
+    "d": "npm run develop"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
+    "mongodb": "^3.1.10",
+    "mongoose": "^5.3.16",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",
-    "sequelize": "^4.41.2"
+    "sequelize": "^4.41.2",
+    "pug": "^2.0.3",
+    "node-sass": "^4.10.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.8"
+    "nodemon": "^1.18.8",
+    "css-loader": "^2.0.0",
+    "extract-loader": "^3.1.0",
+    "file-loader": "^2.0.0",
+    "html-loader": "^0.5.5",
+    "npm-run-all": "^4.1.5",
+    "pug-html-loader": "^1.1.5",
+    "pug-loader": "^2.4.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
   }
 }

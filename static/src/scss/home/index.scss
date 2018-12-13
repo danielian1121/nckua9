@@ -1,13 +1,26 @@
 body > .content{
+  display: grid;
+  grid-template: {
+    areas:
+    '. content .'
+    '. check   .'
+    '. submit  .';
+    columns: 1fr 98% 1fr;
+  }
   > .table {
+    display: flex;
+    grid: {
+      area: content;
+      template-columns: repeat(auto-fit, 13rem);
+    }
     border:1px solid #aaa;
     font-size: 1.5rem;
-    width: 60%;
     border: 1px solid #aaa;
     text-align: center;
     border-collapse: collapse;
     color: #4F4F48;
     tbody {
+      width: 100%;
       > .table__row.row {
         border: 1px solid #aaa;
         > .row__element {
@@ -19,10 +32,70 @@ body > .content{
             height: 2.5rem;
           }
           &.row__element--time {
-            width: 5%;
+            width: 1%;
+          }
+          &.row__element--active {
+            background-color: #405B55;
+          }
+          &.row__element--course {
+            cursor: pointer;
           }
         }
       }
+    }
+  }
+  > .checkbox {
+    display: flex;
+    grid: {
+      area: check;
+      template-columns: repeat(auto-fit, 13rem);
+    }
+    justify-self: center;
+    margin-top: 1.5rem;
+    > .checkbox__check {
+      align-self: center;
+      margin-right: 1.5rem;
+      -ms-transform: scale(2); /* IE */
+      -moz-transform: scale(2); /* FF */
+      -webkit-transform: scale(2); /* Safari and Chrome */
+      -o-transform: scale(2); /* Opera */
+      @media screen and ( min-width: 600px ){
+        -ms-transform: scale(3); /* IE */
+        -moz-transform: scale(3); /* FF */
+        -webkit-transform: scale(3); /* Safari and Chrome */
+        -o-transform: scale(3); /* Opera */
+      }
+    }
+    > .checkbox__label {
+      margin-bottom: .2rem;
+      font-size: 1.5rem;
+      @media screen and ( min-width: 600px ){
+        font-size: 2rem;
+      }
+    }
+  }
+
+  > .submit {
+    display: flex;
+    grid: {
+      area: submit;
+      template-columns: repeat(auto-fit, 13rem);
+    }
+    margin-top: 1rem;
+    padding: 0px;
+    justify: {
+      self: center;
+      content: center;
+    }
+    width: 30%;
+    height: 3.5rem;
+    font-size: 1.7rem;
+    border: 3px solid #72636E;
+    border-radius: 10px;
+    background-color: #9B90C2;
+    cursor: pointer;
+    @media screen and ( min-width: 600px ){
+      width: 20%;
     }
   }
 }

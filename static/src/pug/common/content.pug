@@ -2,7 +2,7 @@ mixin table()
   table.table
     - let i = 0
     tr.table__row.row
-      th.row__element
+      th.row__element.row__element--time
       th.row__element.row__element--day 一
       th.row__element.row__element--day 二
       th.row__element.row__element--day 三
@@ -14,20 +14,24 @@ mixin table()
           td.row__element.row__element--time N
         else
           td.row__element.row__element--time= i
-        td.row__element
-        td.row__element
-        td.row__element
-        td.row__element
-        td.row__element
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
     - i = 4
     while i++ < 8
       tr.table__row.row
         td.row__element.row__element--time= i
-        td.row__element
-        td.row__element
-        td.row__element
-        td.row__element
-        td.row__element
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
+        td.row__element.row__element--course
 
 mixin content()
   +table()
+  section.checkbox
+    input#checkbox.checkbox__check(type = 'checkbox', name = 'check')
+    label.checkbox__label 選取全部時段
+  button.submit(name = 'submit', value = 'submit') 送出

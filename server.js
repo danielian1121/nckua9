@@ -29,6 +29,8 @@ server.get('/api', (req, res) => {
         const dbo = db.db("heroku_d0snmc5z")
         return dbo.collection("nckua9").find({
           $or: option
+        }).sort({
+          persent: -1
         }).toArray()
       }).then(result => {
         const answer = []

@@ -1,3 +1,28 @@
-body {
-
+body > .content{
+  > .table {
+    border:1px solid #aaa;
+    font-size: 1.5rem;
+    width: 60%;
+    border: 1px solid #aaa;
+    text-align: center;
+    border-collapse: collapse;
+    color: #4F4F48;
+    tbody {
+      > .table__row.row {
+        border: 1px solid #aaa;
+        > .row__element {
+          border: 1px solid #aaa;
+          padding: 5px;
+          height: 5rem;
+          &.row__element--day {
+            background-color: #66BAB7;
+            height: 2.5rem;
+          }
+          &.row__element--time {
+            width: 5%;
+          }
+        }
+      }
+    }
+  }
 }

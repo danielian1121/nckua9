@@ -1,2 +1,33 @@
+mixin table()
+  table.table
+    - let i = 0
+    tr.table__row.row
+      th.row__element
+      th.row__element.row__element--day 一
+      th.row__element.row__element--day 二
+      th.row__element.row__element--day 三
+      th.row__element.row__element--day 四
+      th.row__element.row__element--day 五
+    while i++ < 5
+      tr.table__row.row
+        if i==5
+          td.row__element.row__element--time N
+        else
+          td.row__element.row__element--time= i
+        td.row__element
+        td.row__element
+        td.row__element
+        td.row__element
+        td.row__element
+    - i = 4
+    while i++ < 8
+      tr.table__row.row
+        td.row__element.row__element--time= i
+        td.row__element
+        td.row__element
+        td.row__element
+        td.row__element
+        td.row__element
+
 mixin content()
-  h1 hello
+  +table()

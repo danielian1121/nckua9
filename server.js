@@ -2,7 +2,7 @@ const express = require('express')
 const mongoClient = require('./models/connect')
 const server = express()
 
-server.listen(3000)
+server.listen(process.env.PORT || 3000)
 
 server.use('/js', express.static(`${__dirname}/static/dist/js`))
 

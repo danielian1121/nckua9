@@ -14,7 +14,7 @@ mixin table()
           td.row__element.row__element--time N
         else
           td.row__element.row__element--time= i
-        td.row__element.row__element--course
+        td.row__element.row__element--course(header = '1')
         td.row__element.row__element--course
         td.row__element.row__element--course
         td.row__element.row__element--course
@@ -34,4 +34,4 @@ mixin content()
   section.checkbox
     input#checkbox.checkbox__check(type = 'checkbox', name = 'check')
     label.checkbox__label 選取全部時段
-  button.submit(name = 'submit', value = 'submit') 送出
+  button#submit.submit(name = 'submit', value = 'submit') 送出

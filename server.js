@@ -36,7 +36,9 @@ server.get('/api', (req, res) => {
         const answer = []
         result.map((data, index) => {
           for (let i = 0; i < length; i++) {
-            if (time[i].match(data.time) && day[i].match(data.day))
+            if (time[i] === data.time && day[i] === data.day)
+              answer.push(data)
+            else if (time[i].match(data.time) && day[i].match(data.day) && data.time !== '')
               answer.push(data)
           }
         })

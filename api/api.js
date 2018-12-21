@@ -24,6 +24,9 @@ router.get('/', (req, res) => {
         }).toArray()
       }).then(result => {
         const answer = []
+        const respond = {
+          status: 'OK',
+        }
         result.map((data, index) => {
           for (let i = 0; i < length; i++) {
             if (time[i] === data.time && day[i] === data.day)
@@ -32,7 +35,8 @@ router.get('/', (req, res) => {
               answer.push(data)
           }
         })
-        res.send(answer)
+        respond['data'] = answer
+        res.send(respond)
       })
   } catch (e) {
     res.status(400)

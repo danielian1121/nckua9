@@ -81,19 +81,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./static/src/js/home/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./static/src/scss/result/index.scss");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./static/src/js/home/index.js":
-/*!*************************************!*\
-  !*** ./static/src/js/home/index.js ***!
-  \*************************************/
+/***/ "./static/src/scss/result/index.scss":
+/*!*******************************************!*\
+  !*** ./static/src/scss/result/index.scss ***!
+  \*******************************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("const course = document.getElementsByClassName('row__element--course')\nconst check = document.getElementById('checkbox')\nconst button = document.getElementById('submit')\nconst length = course.length\n\nfor (let i = 0; i < length; i++) {\n  course[i].addEventListener('click', () => {\n    if (!course[i].classList.contains('row__element--active'))\n      course[i].classList.add('row__element--active')\n    else\n      course[i].classList.remove('row__element--active')\n  })\n}\n\ncheck.addEventListener('click', () => {\n  if (check.checked) {\n    for (let i = 0; i < length; i++)\n      course[i].classList.add('row__element--active')\n  } else {\n    for (let i = 0; i < length; i++)\n      course[i].classList.remove('row__element--active')\n  }\n})\n\nbutton.addEventListener('click', () => {\n  let time = ['','','','','']\n  let day = [1,2,3,4,5]\n  const click = document.getElementsByClassName('row__element--active')\n  const array = [...click]\n  if (!array.length){\n    Swal({\n      type: 'error',\n      title: 'Oops...',\n      text: '你沒有選擇課程時段'\n    })\n  }else {\n    array.map(value => {\n      const data = String(value.cellIndex)\n      const nowtime = value.parentElement.firstChild.textContent\n      switch (data) {\n        case '1':\n          time[0] += nowtime\n          break\n        case '2':\n          time[1] += nowtime\n          break\n        case '3':\n          time[2] += nowtime\n          break\n        case '4':\n          time[3] += nowtime\n          break\n        case '5':\n          time[4] += nowtime\n          break\n      }\n    })\n    while (time.indexOf('') !== -1) {\n      day.splice(time.indexOf(''),1)\n      time.splice(time.indexOf(''),1)\n    }\n    let href = '/result?'\n    let hrefTime = 'time=[\"\",'\n    let hrefDay = 'day=[\"\",'\n    for (let i = 0; i < day.length; i++) {\n      hrefTime += `\\\"${time[i]}\\\",`\n      hrefDay += `\\\"${day[i]}\\\",`\n    }\n    location.href = `${href}${hrefTime.slice(0,-1)}]&${hrefDay.slice(0,-1)}]`\n  }\n})\n\n\n//# sourceURL=webpack:///./static/src/js/home/index.js?");
+eval("module.exports = __webpack_require__.p + \"result/index.css\";\n\n//# sourceURL=webpack:///./static/src/scss/result/index.scss?");
 
 /***/ })
 

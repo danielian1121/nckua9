@@ -1,0 +1,20 @@
+@mixin content {
+  > .class {
+    display: flex;
+    grid: {
+      area: class;
+      template-columns: repeat(auto-fit, 13rem);
+    }
+    > tbody {
+      width: 100%;
+      > .tbody__rows.rows {
+        border: 1px solid #aaa;
+        > .rows__data {
+          width: 1%;
+          border: 1px solid #aaa;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -4,13 +4,11 @@ append title
   title Result
 
 append css
-  +css( 'home/index' )
+  +css( 'result/index' )
 
 append content
   main.content
-    include /common/result/content.pug
-    +content()
 
 append js
-  +js( 'home/index' )
+  +js( 'result/index' )
   script(src='https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.32.4/sweetalert2.all.js')

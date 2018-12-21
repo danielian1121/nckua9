@@ -6,6 +6,7 @@ module.exports = {
   mode: devMode ? 'development' : 'production',
   entry: {
     'home/index': path.join(projectRoot, 'static/src/js/home/index.js'),
+    'result/index': path.join(projectRoot, 'static/src/js/result/index.js'),
   },
   output: {
     filename: '[name].js',
@@ -18,7 +19,7 @@ module.exports = {
         use:  [
           {
             loader:  'pug-loader',
-          },
+          }
         ],
       },
       {

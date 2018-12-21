@@ -1,2 +1,25 @@
-mixin content()
-  h1 hihi
+mixin content(data, index)
+  tr.tbody__rows.rows
+    td.rows__data= index+1
+    td.rows__data= data.teacher
+    td.rows__data= data.class
+    td.rows__data= data.field
+    if data.day === ''
+      td.rows__data
+    else
+      td.rows__data= `[${data.day}]${data.time}`
+    if data.persent == 0
+      td.rows__data 沒有資料
+    else
+      td.rows__data= data.persent
+
+table.class
+  tr.tbody__rows.rows
+    th.rows__data 名次
+    th.rows__data 老師
+    th.rows__data 課程名稱
+    th.rows__data 領域
+    th.rows__data 時間
+    th.rows__data 登記比例
+  each data, index in value
+    +content(data, index)

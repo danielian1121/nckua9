@@ -1,0 +1,13 @@
+@import 'common/result/content';
+
+body {
+  > .content {
+    display: grid;
+    grid-template: {
+      areas:
+      '. class .';
+      columns: 1fr 98% 1fr;
+    }
+    @include content();
+  }
+}

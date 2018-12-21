@@ -59,7 +59,7 @@ button.addEventListener('click', () => {
       day.splice(time.indexOf(''),1)
       time.splice(time.indexOf(''),1)
     }
-    let href = '/api?'
+    let href = '/result?'
     let hrefTime = 'time=["",'
     let hrefDay = 'day=["",'
     for (let i = 0; i < day.length; i++) {

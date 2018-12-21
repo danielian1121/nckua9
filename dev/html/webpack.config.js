@@ -6,6 +6,7 @@ module.exports = {
   mode: devMode ? 'development' : 'production',
   entry: {
     'home/index': path.join(projectRoot, 'static/src/pug/home/index.pug'),
+    'result/index': path.join(projectRoot, 'static/src/pug/result/index.pug'),
   },
   output: {
     filename: '[name].js',

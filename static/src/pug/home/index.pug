@@ -6,8 +6,14 @@ append title
 append css
   +css( 'home/index' )
 
+append header
+  include /common/component/header.pug
+  +header()
+
 append content
   main.content
+    section.header
+      h1.header__title 課堂時段選取
     include /common/home/content.pug
     +content()
 

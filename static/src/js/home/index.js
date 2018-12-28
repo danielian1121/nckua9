@@ -2,6 +2,7 @@ const course = document.getElementsByClassName('row__element--course')
 const check = document.getElementById('checkbox')
 const button = document.getElementById('submit')
 const length = course.length
+let flag = true
 
 for (let i = 0; i < length; i++) {
   course[i].addEventListener('click', () => {
@@ -13,12 +14,17 @@ for (let i = 0; i < length; i++) {
 }
 
 check.addEventListener('click', () => {
-  if (check.checked) {
+  if (flag) {
     for (let i = 0; i < length; i++)
       course[i].classList.add('row__element--active')
-  } else {
+    flag = false
+    check.innerHTML = ' 取消全選'
+  }
+  else {
     for (let i = 0; i < length; i++)
       course[i].classList.remove('row__element--active')
+    flag = true
+    check.innerHTML = '一鍵全選'
   }
 })
 
@@ -36,7 +42,7 @@ button.addEventListener('click', () => {
   }else {
     array.map(value => {
       const data = String(value.cellIndex)
-      const nowtime = value.parentElement.firstChild.textContent
+      const nowtime = value.parentElement.firstChild.getAttribute('value')
       switch (data) {
         case '1':
           time[0] += nowtime

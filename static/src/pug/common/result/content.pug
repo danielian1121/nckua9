@@ -5,7 +5,7 @@ mixin content(data, index)
     td.rows__data= data.class
     td.rows__data= data.field
     if data.day === ''
-      td.rows__data
+      td.rows__data 線上課程
     else
       td.rows__data= `[${data.day}]${data.time}`
     if data.persent == 0

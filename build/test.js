@@ -1,41 +1,23 @@
 const fs = require('fs')
-const cheerio = require('cheerio')
-const array = []
-let total = 0
 
-const $ = cheerio.load(fs.readFileSync('./html/105-2.html'))
-$('tr', '#lesson').each(function () {
-  const json = {}
-  $(this).children().each(function (i) {
-    switch(i) {
-      case 4:
-        json['field'] = $(this).text()
-        break
-      case 5:
-        json['class'] = $(this).text()
-        break
-      case 6:
-        let temp = $(this).text().replace(/(^\s*)|(\s*$)/g,"")
-        if (temp.includes('*')) {
-          temp = temp.substring($(this).text().indexOf('*')-3, $(this).text().indexOf('*'))
-        }
-        json['teacher'] = temp
-        break
-      case 7:
-        json['number'] = $(this).text()
-        total += Number($(this).text())
-        break
-      default:
-    }
-  })
-  if (!(json['teacher'] == '師姓名'))
-    array.push(json)
-})
-//array.push(total)
+const source = JSON.parse(fs.readFileSync('./107-2-2.json'))
 
-array.map((value) => {
-  value['persent'] = `${(value['number'] / total * 100).toFixed(5)}`
-})
+let target = JSON.parse(fs.readFileSync('../config/107-2.json'))
 
-const content = JSON.stringify(array);
-fs.writeFileSync('105-2.json', content)
+let tLength = target.length
+
+let sLength = source.length
+
+let flag = 1
+
+const temp = []
+
+for (let i = 0 ; i < sLength ; i++) {
+  if (!source[i].number)
+    temp.push(source[i].class)
+}
+
+console.log(temp)
+
+//const content = JSON.stringify(target);
+//fs.writeFileSync('107-2-2.json', content)

@@ -5,13 +5,14 @@
       area: class;
       template-columns: repeat(auto-fit, 13rem);
     }
+    margin: 5rem;
+    border: 1px solid #aaa;
     > tbody {
       width: 100%;
       > .tbody__rows.rows {
-        border: 1px solid #aaa;
         > .rows__data {
+          border-bottom: 1px solid #aaa;
           width: 1%;
-          border: 1px solid #aaa;
           font-size: 1.5rem;
         }
       }

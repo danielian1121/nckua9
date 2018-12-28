@@ -27,7 +27,10 @@ for (let i = 0 ; i < sLength ; i++) {
     total += Number(Object.values(source[i]['10701'][index])[0])
     count++
   })
-  source[i]['persent'] = (total / count).toFixed(5)
+  if (count === 0)
+    source[i]['persent'] = '0'
+  else
+    source[i]['persent'] = (total / count).toFixed(5)
 }
 
 const content = JSON.stringify(source);

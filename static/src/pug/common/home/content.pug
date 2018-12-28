@@ -20,7 +20,7 @@ mixin table()
         td.row__element.row__element--course
         td.row__element.row__element--course
     - i = 4
-    while i++ < 8
+    while i++ < 9
       tr.table__row.row
         td.row__element.row__element--time= i
         td.row__element.row__element--course
@@ -32,6 +32,7 @@ mixin table()
 mixin content()
   +table()
   section.checkbox
-    input#checkbox.checkbox__check(type = 'checkbox', name = 'check')
-    label.checkbox__label 選取全部時段
-  button#submit.submit(name = 'submit', value = 'submit') 送出
+    section.checkbox__all.all
+      input#checkbox.all__check(type = 'checkbox', name = 'check')
+      label.all__label 選取全部時段
+    button#submit.submit(name = 'submit', value = 'submit') 送出

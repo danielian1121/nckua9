@@ -1,0 +1,134 @@
+/* 2014 1202  andy modified*/
+ table {
+    border-collapse: collapse;
+    border-left: 1px solid #1F2A34;
+    border-right: 1px solid #1F2A34;
+    border-spacing: 0px;
+    font-family: Tahoma,Verdana,Arial;
+    //width: 900px;
+}
+
+thead th {
+	background: none repeat scroll 0 0  #96BFE8;   
+	border-color: #1F2A34;
+    border-style: solid;
+    border-width: 1px 1px;
+    color:#003366  ;    /*;# */
+    font-size: 14px;
+    height: 30px;
+    text-align: center;
+	 
+}
+
+.title_line {
+	background:#96BFE8 ;     /* #5CB8E6 #CAA3A3  ; CAA3A3 ;*/
+	border: 1px solid #CCCCFF;
+    color: #003366 ;    /* #FFFFFF ;*/
+    font-size: 14px;
+    padding-left: 1px; 
+    height: 30px;
+    text-align: center;
+}
+
+ 
+tbody td {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCFF;
+    color: #000000;
+    font-size: 12px;
+    height: 15px;
+    padding-left: 1px;
+}
+tbody tr .odd {
+    background: none repeat scroll 0 0 #AEE239;
+}
+tbody td a img {
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+}
+tbody td a:link {
+    color: #FF6600;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+tbody td a:hover {
+    color: #FF6600;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+tbody td a:visited {
+    color: #FF6600;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+tbody th {
+    background: none repeat scroll 0 0 #373B3E;
+    border: 1px solid #2D3134;
+    color: #080808;
+    padding-left: 4px;
+    text-align: left;
+}
+tbody th a:link {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+tbody th a:hover {
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: bolder;
+}
+tbody th a:visited {
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight: bolder;
+    text-decoration: line-through;
+}
+tbody tr:hover {
+    background: none repeat scroll 0 0 #333333;
+}
+tbody a[title^="Download"] {
+    color: #FF6600;
+    font-size: 12px;
+    text-align: center;
+}
+tbody a[title^="Download"]:hover {
+    color: #FF6600;
+    font-size: 12px;
+    text-decoration: underline;
+}
+tbody a[title^="Download"]:visited {
+    color: #FF6600;
+    font-size: 12px;
+    text-decoration: line-through;
+}
+tfoot {
+    background: none repeat scroll 0 0 #1F2A34;
+    border-left: 1px solid #1F2A34;
+    border-right: 1px solid #1F2A34;
+    color: #FFFFFF;
+    font-size: 18px;
+    text-align: center;
+}
+tfoot td {
+    font-style: italic;
+}
+table caption {
+    background: none repeat scroll 0 0 #996666;
+    border-left: 1px solid #1F2A34;
+    border-right: 1px solid #1F2A34;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+
+
+

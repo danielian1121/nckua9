@@ -3,9 +3,15 @@ body > .content{
   grid-template: {
     areas:
     '. content .'
-    '. check   .'
-    '. submit  .';
+    '. check   .';
     columns: 1fr 98% 1fr;
+  }
+  @media screen and ( min-width: 1000px ){
+    grid-template: {
+      areas:
+      '. content check ';
+      columns: 1fr 60% 50fr;
+    }
   }
   > .table {
     display: flex;
@@ -26,7 +32,7 @@ body > .content{
         > .row__element {
           border: 1px solid #aaa;
           padding: 5px;
-          height: 5rem;
+          height: 4.7rem;
           &.row__element--day {
             background-color: #66BAB7;
             height: 2.5rem;
@@ -46,73 +52,75 @@ body > .content{
   }
   > .checkbox {
     display: flex;
+    flex-direction: column;
     grid: {
       area: check;
       template-columns: repeat(auto-fit, 13rem);
     }
     justify-self: center;
-    margin-top: 1.5rem;
-    > .checkbox__check {
-      align-self: center;
-      margin-right: 1.5rem;
-      -ms-transform: scale(2); /* IE */
-      -moz-transform: scale(2); /* FF */
-      -webkit-transform: scale(2); /* Safari and Chrome */
-      -o-transform: scale(2); /* Opera */
-      @media screen and ( min-width: 600px ){
-        -ms-transform: scale(3); /* IE */
-        -moz-transform: scale(3); /* FF */
-        -webkit-transform: scale(3); /* Safari and Chrome */
-        -o-transform: scale(3); /* Opera */
+    align-self: center;
+    > .checkbox__all.all {
+      display: flex;
+      @media screen and ( min-width: 1000px ){
+        margin-bottom: 5rem;
+      }
+      > .all__check {
+        align-self: center;
+        margin-right: 1.5rem;
+        -ms-transform: scale(2); /* IE */
+        -moz-transform: scale(2); /* FF */
+        -webkit-transform: scale(2); /* Safari and Chrome */
+        -o-transform: scale(2); /* Opera */
+        @media screen and ( min-width: 1000px ){
+          -ms-transform: scale(3); /* IE */
+          -moz-transform: scale(3); /* FF */
+          -webkit-transform: scale(3); /* Safari and Chrome */
+          -o-transform: scale(3); /* Opera */
+        }
+      }
+      > .all__label {
+        margin-bottom: .2rem;
+        font-size: 1.5rem;
+        @media screen and ( min-width: 1000px ){
+          font-size: 2rem;
+        }
       }
     }
-    > .checkbox__label {
-      margin-bottom: .2rem;
-      font-size: 1.5rem;
-      @media screen and ( min-width: 600px ){
-        font-size: 2rem;
+    > .submit {
+      display: flex;
+      margin-top: 1rem;
+      padding: 0px;
+      justify: {
+        self: center;
+        content: center;
       }
-    }
-  }
-
-  > .submit {
-    display: flex;
-    grid: {
-      area: submit;
-      template-columns: repeat(auto-fit, 13rem);
-    }
-    margin-top: 1rem;
-    padding: 0px;
-    justify: {
-      self: center;
-      content: center;
-    }
-    cursor: pointer;
-    padding: 12px 24px;
-    border: 1px solid #6b9697;
-    border-radius: 8px;
-    background: #b0f6f8;
-    background: -webkit-gradient(linear, left top, left bottom, from(#b0f6f8), to(#6b9697));
-    background: -moz-linear-gradient(top, #b0f6f8, #6b9697);
-    background: linear-gradient(to bottom, #b0f6f8, #6b9697);
-    text-shadow: #4d6b6c 1px 1px 1px;
-    font: normal normal bold 20px arial;
-    color: #ffffff;
-    text-decoration: none;
-    &:hover {
-      border: 1px solid #99d6d8;
-      background: #d3ffff;
-      background: -webkit-gradient(linear, left top, left bottom, from(#d3ffff), to(#80b4b5));
-      background: -moz-linear-gradient(top, #d3ffff, #80b4b5);
-      background: linear-gradient(to bottom, #d3ffff, #80b4b5);
+      cursor: pointer;
+      padding: 12px 24px;
+      border: 1px solid #6b9697;
+      border-radius: 8px;
+      background: #b0f6f8;
+      background: -webkit-gradient(linear, left top, left bottom, from(#b0f6f8), to(#6b9697));
+      background: -moz-linear-gradient(top, #b0f6f8, #6b9697);
+      background: linear-gradient(to bottom, #b0f6f8, #6b9697);
+      text-shadow: #4d6b6c 1px 1px 1px;
+      font: normal normal bold 20px arial;
       color: #ffffff;
       text-decoration: none;
-    }
-    &:active {
-      background: #6b9697;
-      background: -webkit-gradient(linear, left top, left bottom, from(#6b9697), to(#6b9697));
-      background: -moz-linear-gradient(top, #6b9697, #6b9697);
-      background: linear-gradient(to bottom, #6b9697, #6b9697);
+      &:hover {
+        border: 1px solid #99d6d8;
+        background: #d3ffff;
+        background: -webkit-gradient(linear, left top, left bottom, from(#d3ffff), to(#80b4b5));
+        background: -moz-linear-gradient(top, #d3ffff, #80b4b5);
+        background: linear-gradient(to bottom, #d3ffff, #80b4b5);
+        color: #ffffff;
+        text-decoration: none;
+      }
+      &:active {
+        background: #6b9697;
+        background: -webkit-gradient(linear, left top, left bottom, from(#6b9697), to(#6b9697));
+        background: -moz-linear-gradient(top, #6b9697, #6b9697);
+        background: linear-gradient(to bottom, #6b9697, #6b9697);
+      }
     }
   }
 }

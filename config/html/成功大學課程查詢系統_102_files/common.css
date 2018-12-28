@@ -1,0 +1,133 @@
+@CHARSET "UTF-8";
+
+body{
+    margin:0px;
+}
+.header{
+    margin:0 0 0 0;
+    background:url(../image/line.gif);
+    width:100%;
+}
+.school_title{
+    color:#FFFFFF;
+    position:absolute;
+    top:10px;
+    left:75px;
+}
+.tree{
+    position:absolute;
+    right:10px;
+}
+.sidebar{
+    float:left;
+    background-color:#E8F1F8;
+    border:1px solid #A3C7E2;
+    width:145px;
+    height:700px;
+}
+.content{
+    position:absolute;
+    top:75px;
+    left:150px;
+    background-color:#FFFFFF;
+    padding:0px 10px 0px 0px;
+    height:100%;
+}
+
+.menu_area{
+    background:#eeeeee url(../image/h4_title.jpg) no-repeat scroll left top;
+    text-align:center;
+    color:white;
+    margin:10px 0px 1px 0px;
+    width:144px;
+    border:0px 1px 0px 1px solid #A3C7E2;
+    background-color:#E8F1F8;
+    
+}
+#links{ font-size:12px; }
+
+.message_area{
+    background:#eeeeee url(../image/h5_title.jpg) no-repeat scroll left top;
+    text-align:center;
+    color:white;
+    margin:10px 0px 1px 0px;
+    width:144px;
+    height:150px;
+    border:0px 1px 0px 1px solid #A3C7E2;
+    font-size:12px;
+    background-color:#E8F1F8;
+}
+.menu_area ul{
+    margin:0px;
+    padding:3px 0px 25px 0px;
+}
+.menu_area ul li{
+    list-style-image:none;
+    list-style-position:outside;
+    list-style-type:none;
+    margin:0pt;
+    padding:0pt;
+    background:url(../image/celebrity_link.jpg) no-repeat left top;
+}
+.menu_area ul li a{
+    color:#222266;
+    text-decoration:none;
+}
+
+#navigation{
+    border:1px solid #5263AB;
+    margin:0px;
+    padding:0px;
+    text-indent:0px;
+    background-color:#E2E2E2;
+    width:145px;
+}
+#navigation a.head {
+    cursor:pointer;
+    border:1px solid #CCCCCC;
+    background:#5263AB url(../image/collapsed.gif) no-repeat scroll 3px 4px;
+    color:#FFFFFF;
+    display:block;
+    font-weight:bold;
+    margin:0px;
+    padding:0px;
+    text-indent:14px;
+    text-decoration: none;
+}
+#navigation a.head:hover {
+    color:#FFFF99;
+}
+#navigation a.selected {
+    background-image: url(../image/expanded.gif);
+}
+#navigation a.current {
+    background-color:#FFFF99;
+}
+#navigation ul {
+    border-width:0px;
+    margin:0px;
+    padding:0px;
+    text-indent:0px;
+}
+#navigation li {
+    list-style:none outside none; display:inline;
+}
+#navigation li li a {
+    color:#000000;
+    display:block;
+    text-indent:10px;
+    text-decoration: none;
+}
+#navigation li li a:hover {
+    background-color:#FFFF99;
+    color:#FF0000;
+}
+#menus{
+    height:10pt;
+    backgrond-color:#FFFFFF;
+}
+#serv{
+}
+#f_keyword{
+    display:none;
+}

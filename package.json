@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "npm-run-all --parallel nodemon watch",
+    "develop": "npm-run-all --parallel nodemon watch browser-sync",
+    "browser-sync": "browser-sync --config config/bc-config.js start",
     "nodemon": "nodemon ./server.js",
     "watch": "npm-run-all --parallel watch:*",
     "watch:html": "webpack --watch --config dev/html/webpack.config.js",
@@ -29,6 +30,7 @@
     "sequelize": "^4.41.2"
   },
   "devDependencies": {
+    "browser-sync": "^2.26.3",
     "css-loader": "^2.0.0",
     "extract-loader": "^3.1.0",
     "file-loader": "^2.0.0",

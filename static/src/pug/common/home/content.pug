@@ -10,6 +10,7 @@ mixin table()
       '7': '六',
       '8': '七',
       '9': '八',
+      '10': '九',
     } )
   table.table
     - let i = 0
@@ -20,7 +21,7 @@ mixin table()
       th.row__element.row__element--day WED
       th.row__element.row__element--day THU
       th.row__element.row__element--day FRI
-    while i++ < 9
+    while i++ < 10
       tr.table__row.row
         if i == 5
           td.row__element.row__element--time(value = 'N')= time[i]
@@ -29,6 +30,13 @@ mixin table()
           td.row__element.row__element--course.row__element--sun
           td.row__element.row__element--course.row__element--sun
           td.row__element.row__element--course.row__element--sun
+        else if i == 10
+          td.row__element.row__element--time(value = i-1)= time[i]
+          td.row__element.row__element--course.row__element--moon(header = '1')
+          td.row__element.row__element--course.row__element--moon
+          td.row__element.row__element--course.row__element--moon
+          td.row__element.row__element--course.row__element--moon
+          td.row__element.row__element--course.row__element--moon
         else if i > 5
           td.row__element.row__element--time(value = i-1)= time[i]
           td.row__element.row__element--course(header = '1')

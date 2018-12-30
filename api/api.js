@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
         return dbo.collection("nckua9").find({
           $or: option
         }).sort({
-          persent: -1
+          total: -1
         }).toArray()
       }).then(result => {
         const answer = []

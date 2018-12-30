@@ -13,9 +13,12 @@ for (let i = 0 ; i < sLength ; i++) {
   for (let j = 0 ; j < tLength ; j++) {
     if (source[i].teacher.match( target[j].teacher ) && !target[j].class.match('通識教育生活實踐') && !target[j].persent.match('0.00000')) {
       let data = {
-        [target[j].class]: target[j].persent
+        [target[j].class]: target[j].number
       }
       source[i]['10502'].push(data)
+      source[i]['10502'].push({
+        total: '64809',
+      })
     }
   }
 }

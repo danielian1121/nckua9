@@ -60,8 +60,9 @@ body {
       text-align: center;
       border-collapse: collapse;
       color: #ffffff;
+      border-collapse: separate;
+      border-spacing: .4rem 1.5rem;
       @media screen and (min-width: 960px) {
-        border-collapse: separate;
         border-spacing: 2rem 1rem;
         font-size: 1.5rem;
       }
@@ -87,9 +88,25 @@ body {
             &.row__element--sun {
               background: {
                 image: url(../../img/sun.png);
+                position: center -24px;
+                size: 2rem;
+                repeat: no-repeat;
+              }
+              @media screen and (min-width: 960px) {
                 position: center -36px;
                 size: 2.5rem;
+              }
+            }
+            &.row__element--moon {
+              background: {
+                image: url(../../img/moon.png);
+                position: center -24px;
+                size: 2rem;
                 repeat: no-repeat;
+              }
+              @media screen and (min-width: 960px) {
+                position: center -36px;
+                size: 2.5rem;
               }
             }
             &.row__element--active {

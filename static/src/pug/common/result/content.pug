@@ -11,7 +11,7 @@ mixin content(data, index)
     if data.persent == 0
       td.rows__data 沒有資料
     else
-      td.rows__data= data.persent
+      td.rows__data= data.total
 
 table.class
   tr.tbody__rows.rows
@@ -20,6 +20,6 @@ table.class
     th.rows__data 課程名稱
     th.rows__data 領域
     th.rows__data 時間
-    th.rows__data 登記比例
+    th.rows__data 歷年平均登記人數
   each data, index in value
     +content(data, index)

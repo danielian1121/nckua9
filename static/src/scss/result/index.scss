@@ -1,13 +1,16 @@
 @import 'common/reset.scss';
 @import 'common/result/content';
+@import 'common/header.scss';
 
 body {
+  background-color: #424554;
+  @include header();
   > .content {
     display: grid;
     grid-template: {
       areas:
       '. class .';
-      columns: 1fr 98% 1fr;
+      columns: 1fr 80% 1fr;
     }
     @include content();
   }

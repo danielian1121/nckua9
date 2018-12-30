@@ -12,14 +12,49 @@ mixin content(data, index)
       td.rows__data 沒有資料
     else
       td.rows__data= data.total
+  each array in data['10501']
+    each value, key in array
+      if key !== 'total'
+        tr.tbody__history.history
+          td.history__data(colspan = '2') 10501
+          td.history__data.history__data--center= key
+          td.history__data.history__data--center= value
+  each array in data['10502']
+    each value, key in array
+      if key !== 'total'
+        tr.tbody__history.history
+          td.history__data(colspan = '2') 10502
+          td.history__data.history__data--center= key
+          td.history__data.history__data--center= value
+  each array in data['10601']
+    each value, key in array
+      if key !== 'total'
+        tr.tbody__history.history
+          td.history__data(colspan = '2') 10601
+          td.history__data.history__data--center= key
+          td.history__data.history__data--center= value
+  each array in data['10602']
+    each value, key in array
+      if key !== 'total'
+        tr.tbody__history.history
+          td.history__data(colspan = '2') 10602
+          td.history__data.history__data--center= key
+          td.history__data.history__data--center= value
+  each array in data['10701']
+    each value, key in array
+      if key !== 'total'
+        tr.tbody__history.history
+          td.history__data(colspan = '2') 10701
+          td.history__data.history__data--center= key
+          td.history__data.history__data--center= value
 
 table.class
   tr.tbody__rows.rows
-    th.rows__data 名次
-    th.rows__data 老師
-    th.rows__data 課程名稱
-    th.rows__data 領域
-    th.rows__data 時間
-    th.rows__data 歷年平均登記人數
+    th.rows__data.rows__data--title 名次
+    th.rows__data.rows__data--title 老師
+    th.rows__data.rows__data--title 課程名稱
+    th.rows__data.rows__data--title 領域
+    th.rows__data.rows__data--title 時間
+    th.rows__data.rows__data--title 歷年平均登記人數
   each data, index in value
     +content(data, index)

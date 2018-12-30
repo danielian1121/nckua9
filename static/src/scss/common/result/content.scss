@@ -1,19 +1,39 @@
 @mixin content {
   > .class {
-    display: flex;
-    grid: {
-      area: class;
-      template-columns: repeat(auto-fit, 13rem);
-    }
-    margin: 5rem;
-    border: 1px solid #aaa;
+    grid-area: class;
+    background-color: #dadada;
+    margin-top: 3rem;
+    padding: 2rem;
     > tbody {
       width: 100%;
       > .tbody__rows.rows {
         > .rows__data {
-          border-bottom: 1px solid #aaa;
-          width: 1%;
+          padding: .5rem;
+          border-bottom: 1px solid #f3f3f3;
+          font: {
+            size: 1.5rem;
+            weight: bold;
+          }
+          cursor: pointer;
+          text-align: center;
+          &.rows__data--title {
+            font-weight: unset;
+            cursor: unset;
+          }
+        }
+      }
+      > .tbody__history.history {
+        display: none;
+        width: 100%;
+        &.tbody__history--active {
+          display: table-row;
+        }
+        > .history__data {
+          text-align: end;
           font-size: 1.5rem;
+          &.history__data--center {
+            text-align: center;
+          }
         }
       }
     }

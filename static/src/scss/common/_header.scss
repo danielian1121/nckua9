@@ -1,0 +1,24 @@
+@mixin header {
+  > .header {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 4rem;
+    background-color: #282834;
+    .header__title {
+      margin-left: 5%;
+      color: #ffffff;
+      font: {
+        size: 1.5rem;
+        weight: unset;
+      }
+      @media screen and (min-width: 960px) {
+        font-size: 2rem;
+      }
+    }
+    font: {
+      size: 2rem;
+      weight: unset;
+    }
+  }
+}

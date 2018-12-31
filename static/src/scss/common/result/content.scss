@@ -1,24 +1,66 @@
 @mixin content {
   > .class {
     grid-area: class;
-    background-color: #dadada;
     margin-top: 3rem;
     padding: 2rem;
-    > tbody {
-      width: 100%;
-      > .tbody__rows.rows {
+    border-collapse: collapse;
+    @media screen and (min-width: 720px) {
+      border-collapse: unset;
+      background-color: #dadada;
+    }
+    > thead {
+      > .thead__rows.rows {
+        display: none;
+        @media screen and (min-width: 720px) {
+          display: table-row;
+        }
         > .rows__data {
           padding: .5rem;
           border-bottom: 1px solid #f3f3f3;
           font: {
-            size: 1.5rem;
-            weight: bold;
+            size: 1.3rem;
+            weight: unset;
           }
-          cursor: pointer;
           text-align: center;
-          &.rows__data--title {
-            font-weight: unset;
-            cursor: unset;
+        }
+      }
+    }
+    > tbody {
+      width: 100%;
+      > .tbody__rows.rows {
+        display: block;
+        margin-bottom: 2rem;
+        border: 1px solid #000000;
+        background-color: #dadada;
+        @media screen and (min-width: 720px) {
+          display: table-row;
+        }
+        > .rows__data {
+          display: block;
+          padding: .5rem;
+          position: relative;
+          font-size: 1.1rem;
+          padding-left: 48%;
+
+          &::before {
+            position: absolute;
+            top: 6px;
+            left: .4rem;
+            content: attr(data-title);
+            font-weight: bold;
+          }
+          @media screen and (min-width: 720px) {
+            display: table-cell;
+            padding-left: unset;
+            text-align: center;
+            font: {
+              size: 1.3rem;
+              weight: bold;
+            }
+            cursor: pointer;
+            &::before {
+              display: none;
+            }
           }
         }
       }
@@ -29,11 +71,8 @@
           display: table-row;
         }
         > .history__data {
-          text-align: end;
-          font-size: 1.5rem;
-          &.history__data--center {
-            text-align: center;
-          }
+          text-align: center;
+          font-size: 1.3rem;
         }
       }
     }

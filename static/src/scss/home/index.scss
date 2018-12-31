@@ -68,31 +68,38 @@ body {
             &.row__element--sun {
               background: {
                 image: url(../../img/sun.png);
-                position: center -24px;
-                size: 2rem;
+                position: center -12px;
+                size: 1.5rem;
                 repeat: no-repeat;
               }
               @media screen and (min-width: 960px) {
-                position: center -36px;
-                size: 2.5rem;
+                background: {
+                  position: center -24px;
+                  size: 2rem;
+                }
               }
             }
             &.row__element--moon {
               background: {
                 image: url(../../img/moon.png);
-                position: center -24px;
-                size: 2rem;
+                position: center -12px;
+                size: 1.5rem;
                 repeat: no-repeat;
               }
               @media screen and (min-width: 960px) {
-                position: center -36px;
-                size: 2.5rem;
+                background: {
+                  position: center -24px;
+                  size: 2rem;
+                }
               }
             }
             &.row__element--active {
               background: {
                 color: #ffffff;
-                position: center 5px;
+                position: center 12px;
+              }
+              @media screen and (min-width: 960px) {
+                background-position: center 8px;
               }
             }
           }

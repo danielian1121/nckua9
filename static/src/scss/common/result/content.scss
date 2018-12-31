@@ -26,7 +26,6 @@
       }
     }
     > tbody {
-      width: 100%;
       > .tbody__rows.rows {
         display: block;
         margin-bottom: 2rem;
@@ -66,6 +65,7 @@
         }
       }
       > .tbody__history.history {
+        display: block;
         display: none;
         width: 100%;
         &.tbody__history--active {

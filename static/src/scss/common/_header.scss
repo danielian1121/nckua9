@@ -8,12 +8,14 @@
     .header__title {
       margin-left: 5%;
       color: #ffffff;
-      font: {
-        size: 1.5rem;
-        weight: unset;
-      }
-      @media screen and (min-width: 960px) {
-        font-size: 2rem;
+      > .title__h1 {
+        font: {
+          size: 1.5rem;
+          weight: unset;
+        }
+        @media screen and (min-width: 960px) {
+          font-size: 2rem;
+        }
       }
     }
     font: {
